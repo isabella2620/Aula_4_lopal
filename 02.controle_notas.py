@@ -1,24 +1,25 @@
 nome = input("Digite o nome: ")
-nota = float(input("Digite a nota: "))
-nova_nota = (input("Quer adicionar uma nota? "))
+nota = float(input("Qual a nota? "))
 
+quantidade_de_notas = 1
+soma_das_notas = nota
 
-contador = 4
-nova_nota = "sim" or "nao"
-media = (nota + nova_nota)
+pergunta = input("Quer adicionar uma nota? ")
 
-while nova_nota == "sim":
-     print("Digite nova nota: ")
+while pergunta == "sim":
+    nota = float(input("Qual a nota? "))
+    soma_das_notas = soma_das_notas + nota
+    quantidade_de_notas = quantidade_de_notas + 1
+    
+    pergunta = input("Quer adicionar uma nota? ")
 
+media = soma_das_notas / quantidade_de_notas
 
+if media >= 5:
+    situacao = "Aprovado"
+else:
+    situacao = "Reprovado"
 
-if nova_nota == "sim":
-    nova_nota = input("Digite nova nota: ")
-    situacao = print("1")
-else: 
-     situacao = "2"
-
-
-print (f"Nome: {nome}")
-print (f"Media: {media}")
-print (f"Situaca: {situacao}")
+print(f"Nome: {nome}")
+print(f"Media: {media}")
+print(f"Situacao: {situacao}")
